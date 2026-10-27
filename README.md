@@ -31,7 +31,9 @@ https://jamspot.github.io/too-many-bones-solo-academy/
 
 ## GitHub Pages
 
-The site uses plain HTML, CSS and JavaScript and does not require a build framework. In the repository, open **Settings → Pages** and select **Deploy from a branch**, branch `main`, folder `/ (root)`. Alternatively, add a workflow-based deployment after repository Pages permissions are configured.
+The site uses plain HTML, CSS and JavaScript and does not require a build framework. The repository includes `.github/workflows/pages.yml`, which checks required pages and deploys the site with GitHub Actions.
+
+**One-time repository setup:** open [Settings → Pages](https://github.com/JamSpot/too-many-bones-solo-academy/settings/pages) and set **Build and deployment → Source** to **GitHub Actions**. The connected GitHub integration cannot create/enable the Pages site itself; the repository owner must make this setting change. Then check the [Actions runs](https://github.com/JamSpot/too-many-bones-solo-academy/actions) and confirm the build and deploy jobs both pass before treating the website as live.
 
 ## Current status
 

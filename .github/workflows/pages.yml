@@ -16,13 +16,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Check required pages and assets
-        run: |
-          set -eu
-          for file in index.html getting-started.html rules.html gearlocs.html tyrants.html expansions.html solo-strategy.html research.html assets/style.css assets/site.js; do
-            test -s "$file" || { echo "Missing required file: $file"; exit 1; }
-          done
-          echo "All required pages and assets are present."
+      - name: Validate pages, navigation and local links
+        run: python3 scripts/validate_site.py
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site

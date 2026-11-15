@@ -16,7 +16,6 @@ REQUIRED = [
 class PageAudit(HTMLParser):
     def __init__(self):
         super().__init__()
-        self.ids = set()
         self.links = []
         self.has_nav = False
         self.has_footer = False
@@ -25,8 +24,6 @@ class PageAudit(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
-        if "id" in attrs:
-            self.ids.add(attrs["id"])
         if tag == "nav":
             self.has_nav = True
         if tag == "footer":
@@ -81,7 +78,8 @@ for page in pages:
             continue
         if parts.fragment and target.suffix.lower() in {".html", ".htm"}:
             target_source = target.read_text(encoding="utf-8")
-            if not re.search(r'\\b(?:id|name)=[\\"\\']' + re.escape(parts.fragment) + r'[\\"\\']', target_source):
+            anchor_pattern = r"""(?:id|name)\s*=\s*["']""" + re.escape(parts.fragment) + r"""["']"""
+            if not re.search(anchor_pattern, target_source):
                 errors.append(f"{page.name}: missing anchor in {target.relative_to(ROOT)}: #{parts.fragment}")
 
 if errors:

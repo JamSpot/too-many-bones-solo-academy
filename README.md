@@ -20,6 +20,7 @@ https://jamspot.github.io/too-many-bones-solo-academy/
 - `research.html` — official-source register, verified rulings and progress
 - `assets/style.css` — responsive light theme
 - `assets/site.js` — accessible mobile navigation
+- `scripts/validate_site.py` — dependency-free local-link, navigation and required-asset checks
 
 ## Rules and research standards
 
@@ -33,7 +34,7 @@ https://jamspot.github.io/too-many-bones-solo-academy/
 
 ## GitHub Pages
 
-The site uses plain HTML, CSS and JavaScript and does not require a build framework. The repository includes `.github/workflows/pages.yml`, which checks required pages and assets and deploys the site with GitHub Actions.
+The site uses plain HTML, CSS and JavaScript and does not require a build framework. The repository includes `.github/workflows/pages.yml`, which runs `scripts/validate_site.py` before uploading and deploying the site with GitHub Actions.
 
 **One-time repository setup:** open [Settings → Pages](https://github.com/JamSpot/too-many-bones-solo-academy/settings/pages) and set **Build and deployment → Source** to **GitHub Actions** if this has not already been done. Then check the [Actions runs](https://github.com/JamSpot/too-many-bones-solo-academy/actions) and confirm the build and deploy jobs both pass before treating the website as live.
 
@@ -41,9 +42,8 @@ The site uses plain HTML, CSS and JavaScript and does not require a build framew
 
 - The eight-page navigation and responsive light theme are present.
 - The Rules page now summarises eight battle-related clarifications linked directly to official CTG FAQ articles.
-- The First Game page now explicitly withdraws the earlier unverified Drellen deck recipe. Do not use the old 8-General-card / numbered-Special-Encounter sequence.
+- The First Game page explicitly withdraws the earlier unverified Drellen deck recipe. Do not use the old 8-General-card / numbered-Special-Encounter sequence.
 - Picket and Patches remain the provisional first learning pair; this is a strategy choice, not a CTG-required combination or a tested claim that they are optimal.
 - The exact official Drellen setup and numbered Encounter-card sequence remain unresolved. They will not be published until checked against the current official base-game rulebook and Tyrant instructions.
-- Static checks of all eight HTML pages found the navigation, stylesheet and script references present, with no broken internal page links.
+- Static checks of all eight HTML pages found the navigation, stylesheet and script references present, with no broken internal page links. The new validator also passed a local eight-page fixture test.
 - GitHub Pages deployment is not yet independently verified. The latest commit has no reported commit status, and the published URL could not be reached from the current verification environment.
-

@@ -38,10 +38,11 @@ The site uses plain HTML, CSS and JavaScript and does not require a build framew
 
 **One-time repository setup:** open [Settings → Pages](https://github.com/JamSpot/too-many-bones-solo-academy/settings/pages) and set **Build and deployment → Source** to **GitHub Actions** if this has not already been done. Then check the [Actions runs](https://github.com/JamSpot/too-many-bones-solo-academy/actions) and confirm the build and deploy jobs both pass before treating the website as live.
 
-## Current status — 15 November 2026
+## Current status — 16 November 2026
 
 - The eight-page navigation and responsive light theme are present.
 - The Rules page now summarises eight battle-related clarifications linked directly to official CTG FAQ articles.
+- The Rules, First Game and Solo Strategy pages now explain CTG's official party-size clarification: party size counts Gearlocs, not human players, when someone plays multi-handed.
 - The First Game page explicitly withdraws the earlier unverified Drellen deck recipe. Do not use the old 8-General-card / numbered-Special-Encounter sequence.
 - Picket and Patches remain the provisional first learning pair; this is a strategy choice, not a CTG-required combination or a tested claim that they are optimal.
 - The exact official Drellen setup and numbered Encounter-card sequence remain unresolved. They will not be published until checked against the current official base-game rulebook and Tyrant instructions.

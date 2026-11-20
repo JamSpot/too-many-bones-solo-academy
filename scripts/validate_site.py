@@ -9,7 +9,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = [
     "index.html", "getting-started.html", "rules.html", "gearlocs.html",
-    "tyrants.html", "expansions.html", "solo-strategy.html", "research.html",
+    "tyrants.html", "expansions.html", "solo-strategy.html", "research.html", "battle-drills.html",
     "assets/style.css", "assets/site.js",
 ]
 

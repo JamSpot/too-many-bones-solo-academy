@@ -12,20 +12,33 @@ REQUIRED = [
     "tyrants.html", "expansions.html", "solo-strategy.html", "research.html", "battle-drills.html",
     "assets/style.css", "assets/site.js",
 ]
+REQUIRED_NAV = [
+    "index.html", "getting-started.html", "rules.html", "gearlocs.html",
+    "tyrants.html", "expansions.html", "solo-strategy.html", "battle-drills.html", "research.html",
+]
 
 class PageAudit(HTMLParser):
     def __init__(self):
         super().__init__()
         self.links = []
+        self.nav_links = []
+        self.in_nav = False
         self.has_nav = False
         self.has_footer = False
         self.has_css = False
         self.has_js = False
 
+    def handle_endtag(self, tag):
+        if tag == "nav":
+            self.in_nav = False
+
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == "nav":
             self.has_nav = True
+            self.in_nav = True
+        if tag == "a" and self.in_nav and attrs.get("href"):
+            self.nav_links.append(attrs["href"])
         if tag == "footer":
             self.has_footer = True
         for attr in ("href", "src"):
@@ -53,6 +66,10 @@ for page in pages:
     audit.feed(source)
     if not audit.has_nav:
         errors.append(f"{page.name}: missing navigation")
+    else:
+        missing_nav = [item for item in REQUIRED_NAV if item not in audit.nav_links]
+        if missing_nav:
+            errors.append(f"{page.name}: main navigation missing links: {', '.join(missing_nav)}")
     if not audit.has_footer:
         errors.append(f"{page.name}: missing footer")
     if not audit.has_css:

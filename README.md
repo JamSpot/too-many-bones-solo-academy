@@ -18,6 +18,7 @@ https://jamspot.github.io/too-many-bones-solo-academy/
 - `expansions.html` — collection register
 - `solo-strategy.html` — solo strategy and experiment plan
 - `research.html` — official-source register, verified rulings and progress
+- `battle-drills.html` — six practical exercises based on official CTG FAQ clarifications
 - `assets/style.css` — responsive light theme
 - `assets/site.js` — accessible mobile navigation
 - `scripts/validate_site.py` — dependency-free local-link, navigation and required-asset checks
@@ -38,15 +39,15 @@ The site uses plain HTML, CSS and JavaScript and does not require a build framew
 
 **One-time repository setup:** open [Settings → Pages](https://github.com/JamSpot/too-many-bones-solo-academy/settings/pages) and set **Build and deployment → Source** to **GitHub Actions** if this has not already been done. Then check the [Actions runs](https://github.com/JamSpot/too-many-bones-solo-academy/actions) and confirm the build and deploy jobs both pass before treating the website as live.
 
-## Current status — 17 November 2026
+## Current status — 23 November 2026
 
-- The eight-page navigation and responsive light theme are present.
-- The Rules page now summarises eight battle-related clarifications linked directly to official CTG FAQ articles.
-- The Rules page now includes the official 15 September 2026 “Gearlocs Need Food Badly” special-Encounter procedure, including critter movement, alternating activations, action restrictions and the HP-stack reward.
-- The Rules and Research pages also record CTG's official clarification that only Gearlocs can have Buff HP; the first-game guide and homepage link directly to the new Encounter walkthrough.
-- The Rules, First Game and Solo Strategy pages now explain CTG's official party-size clarification: party size counts Gearlocs, not human players, when someone plays multi-handed.
+- The nine-page site has a responsive light theme and shared navigation; the validator checks that every page links to all nine pages.
+- The Rules page contains 15 selected official battle/Baddie clarifications and the official “Gearlocs Need Food Badly” special-Encounter walkthrough.
+- Battle Drills now contains six practical exercises. The sixth covers Carcass's Meat Hooks and an Undead Baddie's simultaneous defeat trigger, including the requirement that Carcass deal the defeating blow.
+- The Tyrants page records the six rulings currently listed in CTG's official Tyrants FAQ category, including Rol's movement clarification.
+- The Research register includes the official Carcass FAQ and records its 3 January 2025 modification date and 23 November 2026 recheck.
+- Party-size, Buff HP, Baddie skills, battle timing and special-Encounter notes remain linked to the publisher's own FAQ articles.
 - The First Game page explicitly withdraws the earlier unverified Drellen deck recipe. Do not use the old 8-General-card / numbered-Special-Encounter sequence.
-- Picket and Patches remain the provisional first learning pair; this is a strategy choice, not a CTG-required combination or a tested claim that they are optimal.
 - The exact official Drellen setup and numbered Encounter-card sequence remain unresolved. They will not be published until checked against the current official base-game rulebook and Tyrant instructions.
-- Static checks of all eight HTML pages found the navigation, stylesheet and script references present, with no broken internal page links. The new validator also passed a local eight-page fixture test.
-- GitHub Pages deployment is not yet independently verified. The latest commit has no reported commit status, and the published URL could not be reached from the current verification environment.
+- The validator checks all nine HTML pages, required assets, every page's complete navigation, local links and in-page anchors. Run `python3 scripts/validate_site.py` before publishing.
+- GitHub Pages deployment must be checked in Actions after each repository update; do not treat a successful file write or local validation as proof of deployment.

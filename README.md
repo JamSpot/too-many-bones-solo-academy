@@ -39,9 +39,10 @@ The site uses plain HTML, CSS and JavaScript and does not require a build framew
 
 **One-time repository setup:** open [Settings → Pages](https://github.com/JamSpot/too-many-bones-solo-academy/settings/pages) and set **Build and deployment → Source** to **GitHub Actions** if this has not already been done. Then check the [Actions runs](https://github.com/JamSpot/too-many-bones-solo-academy/actions) and confirm the build and deploy jobs both pass before treating the website as live.
 
-## Current status — 23 November 2026
+## Current status — 24 November 2026
 
 - The nine-page site has a responsive light theme and shared navigation; the validator checks that every page links to all nine pages.
+- The First Game page now includes the current CTG base-game whole-box component totals, with explicit safeguards that box totals are not per-adventure setup quantities and do not establish Encounter or Trove Loot deck counts.
 - The Rules page contains 15 selected official battle/Baddie clarifications and the official “Gearlocs Need Food Badly” special-Encounter walkthrough.
 - Battle Drills now contains six practical exercises. The sixth covers Carcass's Meat Hooks and an Undead Baddie's simultaneous defeat trigger, including the requirement that Carcass deal the defeating blow.
 - The Tyrants page records the six rulings currently listed in CTG's official Tyrants FAQ category, including Rol's movement clarification.
